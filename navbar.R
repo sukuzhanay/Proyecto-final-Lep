@@ -1,5 +1,6 @@
 require(pacman)
 p_load(shiny, shinythemes,leaflet,leaflet.extras,mapsapi,geosphere,ggmap,httr,xml2,jsonlite,readxl,sparklyr,janitor,stringr,tidyverse)
+api <- "AIzaSyCHI04kh-YwFaqzmC8uqwZ4vp_mu7nhCPE"
 
 ui <- navbarPage("Proyecto Lep",id = "idTabset",
 
@@ -9,7 +10,7 @@ ui <- navbarPage("Proyecto Lep",id = "idTabset",
                                       h2("Bienvenido a la aplicacion Lep"),
                                       p("Introduce su usuaarioy contraseña"),
                                       textInput("direccion_in", NULL),
-                                      fluidRow(actionButton('irConsumidor', 'Tools for consumers'),
+                                      fluidRow(actionButton('irLogin', 'Tools for consumers'),
                                                actionButton('irEmpresario', 'Tools for entrepreneurs'))
                                     )
                           )),
