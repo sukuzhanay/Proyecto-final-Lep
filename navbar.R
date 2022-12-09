@@ -14,6 +14,7 @@ ui <- navbarPage("Proyecto Lep",id = "idTabset",
                                                actionButton('irEmpresario', 'Tools for entrepreneurs'))
                                     )
                           )),
+
                  tabPanel("Precios", value = "panelPrecios",
                           fluidPage(theme = shinytheme("superhero"),
                                     verticalLayout(
@@ -24,6 +25,20 @@ ui <- navbarPage("Proyecto Lep",id = "idTabset",
                                                actionButton('irEmpresario', 'Tools for entrepreneurs'))
                                     )
                           )),
+
+                 tabPanel("Estadisticas", value = "panelEstadisticas",
+                          fluidPage(theme = shinytheme("superhero"),
+                                    verticalLayout(
+                                      h2("Panel de Estadisticas"),
+                                      fluidRow(actionButton('irConsumidor', 'Por Comunidades Autonomas'),
+                                               actionButton('irEmpresario', 'Por Provincias'),
+                                               actionButton('irEmpresario', 'Por Municipios')
+                                           )
+                                      )
+                                    )
+                          ),
+
+
                 tabPanel("Consumidores", value = "panelPersonalizado",
                          fluidPage(
                            sidebarLayout(
@@ -53,13 +68,17 @@ ui <- navbarPage("Proyecto Lep",id = "idTabset",
                                   h5("Listado de gasolineras:"),
                                   dataTableOutput("table_usu")
                                 )
-                           )
-                         ),
-)
-)
-server <- function(input, output) {
+                          )
 
+
+                ),
+
+),
+)
+
+server <- function(input, output) {
 }
 
 shinyApp(ui, server)
+
 
